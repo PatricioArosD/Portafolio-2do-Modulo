@@ -1,0 +1,247 @@
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 10% 1fr;
+    grid-template-areas: 
+    "nav header"
+    "nav main"
+    "nav main"
+    "aside aside";
+    height: 100vh;
+    color: white;
+    font-family: "Poetsen One", sans-serif;
+}
+nav{
+    grid-area: nav;
+    background-color:#18022d;
+    background-image: linear-gradient(#18022d, #1a0241);
+}
+nav ul{
+    padding: 10px;
+}
+nav img{
+width: 3rem;
+}
+nav li{
+    list-style: none;
+}
+nav li a{
+    text-decoration: none;
+    color: white;
+}
+nav li a:hover{
+    color: bisque;
+}
+header{
+    grid-area: header;
+    background-image: url("../img/Space-Background-Images.jpg");
+    background-size: cover;
+    text-align: center;
+    border: 1px solid white;
+}
+.card4{
+    display: flex;
+    width: 40vw;
+    margin:20px;
+} 
+.headerflex{
+    display: flex;
+    align-items: center;
+}
+.headerflex img{
+    width: 100%;
+}
+main{
+    grid-area: main;
+    background-color: #1a0241;
+}
+.aboutme{
+    display: flex;
+    align-items: center;
+    border: 1px solid white;
+}
+.aboutme img{
+    width: 100%;
+}
+
+.desarrollo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background-color: #8760b6;
+    border: 1px solid white;
+} 
+
+.desarrollo ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;   
+}
+.card2{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    border-radius: 3px;
+    box-shadow: 0 1px 10px black;
+    margin:20px;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    color: #fffc9e
+} 
+.card2 img{
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease-in-out;
+    transition-delay: 0.5s  
+}
+.card2 img:hover{
+    width: 400px;
+    height: 400px;
+    transform: rotate(360deg);
+}
+.card2 li{
+    color: #fffc9e
+}
+.card3{
+    display: flex;
+    width: 300px;
+    height: 100px;
+    border-radius: 3px;
+    box-shadow: 0 1px 10px black;
+    margin:20px;
+    align-items: center;
+    justify-content: center;
+    font-size: large;
+    color: #fffc9e;
+}
+.contacto{
+    grid-area: aside;
+    align-items: center;
+    height: 60px;
+}
+.contacto-a{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.galeria{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 3px;
+    box-shadow: 0 1rem 1rem black;
+    margin:20px;
+    position: relative;
+    background-color: white;
+    color: black;
+}
+.card-body{
+    position:absolute;
+    background-color: beige;
+    transform: rotateY(180deg);
+    height: 100%;
+    backface-visibility: hidden;
+    transition: all 1s ease;
+    border-radius: 5px;
+    text-align: center;
+}
+.card:hover .card-body{
+    transform: rotateY(0deg);
+}
+.card img{
+    border-radius: spx;
+    width: 100%;
+    border-radius: 2px;
+}
+.card h2{
+    justify-content: center;
+    text-align: center;
+}
+
+/* Mdia Tamaño smartPhone */
+
+@media (max-width: 576px){
+    body{
+        grid-template-areas:
+        "nav"
+        "header"
+        "main"
+        "aside"
+        "footer";
+        grid-template-columns: auto auto;
+    }
+    .card2 img{
+        transition: none;
+    }
+    .card2 img:hover{
+        width: 100%;
+    }
+    .card4{
+        display: flex;
+        width: 80vw;
+        height: 100px;
+        border-radius: 3px;
+        box-shadow: 0 1px 10px black;
+    } 
+    .card-body{
+        position:relative;
+        background-color: beige;
+        transform: rotateY(0deg);
+        height: auto;
+        backface-visibility: visible;
+    }
+    .card{
+        flex-direction: column-reverse;
+    }
+    nav{
+        text-align: center;
+    }
+    nav ul{
+        display: flex;
+        justify-content: center;
+    }
+    nav li{
+        padding: 5px;
+    }
+    .card:hover .card-body{
+        transform: none;
+    }
+    header{
+        height: 100vh;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .headerflex{
+        flex-wrap: wrap;
+        height: 70vh;
+        justify-content: center;
+        align-items: normal;
+    }
+    .headerflex img{
+        height: 30vh;
+    }
+    .aboutme{
+        flex-direction: column;
+        height: 70vh;
+        align-items: center;
+        justify-content: center;
+    }
+    .aboutme img{
+        height: 40vh ;
+    }
+    .contacto-a{
+        text-align: center;
+    }
+}
+
+/* Keyframes */
